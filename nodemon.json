@@ -1,0 +1,14 @@
+{
+    "watch": [
+        "src/**/*",
+        "index.ts"
+    ],
+    "ext": "ts, html, css, js",
+    "ignore": [
+        "node_modules/**/*",
+        "dist/**/*"
+    ],
+    "delay": 1000,
+    "verbose": true,
+    "exec": "npx ts-node ./src/index.ts"
+}
