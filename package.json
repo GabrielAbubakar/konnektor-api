@@ -1,27 +1,36 @@
 {
-  "name": "konnektor-api",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
-    "dev": "nodemon"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "dotenv": "^17.2.3",
-    "express": "^5.2.1",
-    "helmet": "^8.1.0"
-  },
-  "devDependencies": {
-    "@types/express": "^5.0.6",
-    "@types/morgan": "^1.9.10",
-    "morgan": "^1.10.1",
-    "nodemon": "^3.1.11",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.9.3"
-  }
+    "name": "konnektor-api",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "tsc",
+        "dev": "nodemon",
+        "lint": "eslint . --ext .ts",
+        "format": "prettier --write ."
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "dotenv": "^17.2.3",
+        "express": "^5.2.1",
+        "helmet": "^8.1.0"
+    },
+    "devDependencies": {
+        "@types/express": "^5.0.6",
+        "@types/morgan": "^1.9.10",
+        "@typescript-eslint/eslint-plugin": "^8.48.1",
+        "@typescript-eslint/parser": "^8.48.1",
+        "eslint": "^9.39.1",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-prettier": "^5.5.4",
+        "jiti": "^2.6.1",
+        "morgan": "^1.10.1",
+        "nodemon": "^3.1.11",
+        "prettier": "^3.7.4",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.9.3"
+    }
 }
