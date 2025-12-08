@@ -20,7 +20,7 @@ export default [
             prettier: prettier,
         },
         rules: {
-            'no-console': 'warn',
+            'no-console': 'off',
             // Enforce consistent indentation (4 spaces in this case)
             // indent: ['error', 4],
             // Enforce the use of single quotes for strings
