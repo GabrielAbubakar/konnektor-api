@@ -1,14 +1,8 @@
 {
-    "watch": [
-        "src/**/*",
-        "index.ts"
-    ],
+    "watch": ["src/**/*", "index.ts"],
     "ext": "ts, html, css, js",
-    "ignore": [
-        "node_modules/**/*",
-        "dist/**/*"
-    ],
+    "ignore": ["node_modules/**/*", "dist/**/*"],
     "delay": 1000,
     "verbose": true,
-    "exec": "npx ts-node ./src/index.ts"
+    "exec": "npx ts-node -r tsconfig-paths/register ./src/index.ts"
 }

@@ -19,6 +19,11 @@ export default [
             '@typescript-eslint': ts,
             prettier: prettier,
         },
+        settings: {
+            'import/resolver': {
+                typescript: {},
+            },
+        },
         rules: {
             'no-console': 'off',
             // Enforce consistent indentation (4 spaces in this case)
@@ -41,6 +46,13 @@ export default [
                     semi: true,
                     endOfLine: 'auto', // ✅ ADD THIS
                 },
+            ],
+            // Disallow importing via parent-relative paths (encourage aliases)
+            'no-restricted-imports': [
+                'error',
+                {
+                    patterns: ['../*']
+                }
             ],
         },
     },
