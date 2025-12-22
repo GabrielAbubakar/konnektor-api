@@ -2,10 +2,15 @@ import { Request, Response } from 'express';
 import { userService } from '@v1/services/user.service';
 import { catchAsync } from '@api/utils';
 import { authService } from '@/api/v1/services';
+import { AppError } from '@api/utils';
 
 class AuthController {
     register = catchAsync(async (req: Request, res: Response) => {
         const data = req.body;
+        if (!data || !data.email || !data.name || !data.password) {
+            throw new AppError('Missing required fields', 400);
+        }
+
         await userService.createUser(data);
 
         res.status(201).json({
@@ -17,6 +22,10 @@ class AuthController {
     login = catchAsync(async (req: Request, res: Response) => {
         // Login logic here
         const data = req.body;
+        if (!data || !data.email || !data.name || !data.password) {
+            throw new AppError('Missing required fields', 400);
+        }
+
         const { token } = await authService.login(data);
 
         res.status(200).json({
