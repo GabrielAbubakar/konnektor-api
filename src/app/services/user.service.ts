@@ -1,5 +1,5 @@
-import User, { IUser } from '@api/v1/models/user.model';
-import { AppError } from '@api/utils';
+import User, { IUser } from '@/app/models/user.model';
+import { AppError } from '@/app/utils';
 
 interface CreateUserInput {
     name: string;

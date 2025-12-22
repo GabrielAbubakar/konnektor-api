@@ -1,4 +1,4 @@
-import { catchAsync } from '@/api/utils';
+import { catchAsync } from '@/app/utils';
 import { Request, Response } from 'express';
 
 class SocialProfileController {

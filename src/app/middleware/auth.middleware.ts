@@ -1,5 +1,5 @@
-import User, { IUser } from '@api/v1/models/user.model';
-import { AppError, catchAsync } from '@api/utils';
+import User, { IUser } from '@/app/models/user.model';
+import { AppError, catchAsync } from '@/app/utils';
 import jwt from 'jsonwebtoken';
 import { Request, Response } from 'express';
 

@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import AppError from '@api/utils/AppError';
+import AppError from '@/app/utils/AppError';
 
 interface ErrorResponse {
     status: string;

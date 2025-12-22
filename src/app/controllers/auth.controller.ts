@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
-import { userService } from '@v1/services/user.service';
-import { catchAsync } from '@api/utils';
-import { authService } from '@/api/v1/services';
-import { AppError } from '@api/utils';
+import { userService } from '@/app/services/user.service';
+import { catchAsync } from '@/app/utils';
+import { authService } from '@/app/services';
+import { AppError } from '@/app/utils';
 
 class AuthController {
     register = catchAsync(async (req: Request, res: Response) => {
@@ -22,7 +22,7 @@ class AuthController {
     login = catchAsync(async (req: Request, res: Response) => {
         // Login logic here
         const data = req.body;
-        if (!data || !data.email || !data.name || !data.password) {
+        if (!data || !data.email || !data.password) {
             throw new AppError('Missing required fields', 400);
         }
 
