@@ -1,4 +1,4 @@
-import User, { IUser } from '@/app/models/user.model';
+import { type IUser, User } from '@/app/models';
 import { AppError } from '@/app/utils';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';

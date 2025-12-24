@@ -1,4 +1,2 @@
-import { authRoutes } from './auth.route';
-import { socialProfileRoutes } from '@/app/routes/socialProfile.route';
-
-export { authRoutes, socialProfileRoutes };
+export * from '@/app/routes/auth.route';
+export * from '@/app/routes/socialProfile.route';

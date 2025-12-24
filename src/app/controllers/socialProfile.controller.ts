@@ -1,7 +1,7 @@
-import { AuthenticatedRequest } from '@/app/middleware/auth.middleware';
+import type { AuthenticatedRequest } from '@/app/middleware/auth.middleware';
 import { socialProfileService } from '@/app/services';
 import { AppError, catchAsync } from '@/app/utils';
-import { Response } from 'express';
+import type { Response } from 'express';
 
 class SocialProfileController {
     create = catchAsync(async (req: AuthenticatedRequest, res: Response) => {

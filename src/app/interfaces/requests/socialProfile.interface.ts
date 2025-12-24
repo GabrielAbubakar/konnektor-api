@@ -1,6 +1,4 @@
-// import { Schema } from 'mongoose';
-
-import { Types } from 'mongoose';
+import type { Types } from 'mongoose';
 
 export interface ICreateSocialProfileRequest {
     userId: Types.ObjectId;

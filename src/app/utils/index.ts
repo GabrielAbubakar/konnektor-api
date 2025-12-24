@@ -1,4 +1,2 @@
-import catchAsync from './catchAsync';
-import AppError from './AppError';
-
-export { catchAsync, AppError };
+export * from '@/app/utils/AppError';
+export * from '@/app/utils/catchAsync';

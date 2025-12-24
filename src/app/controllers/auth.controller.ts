@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import type { Request, Response } from 'express';
 import { userService } from '@/app/services/user.service';
 import { catchAsync } from '@/app/utils';
 import { authService } from '@/app/services';

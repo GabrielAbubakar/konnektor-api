@@ -1,5 +1,5 @@
 import Router from 'express';
-import { socialProfileController } from '@/app/controllers/socialProfile.controller';
+import { socialProfileController } from '@/app/controllers';
 import { authMiddleware } from '@/app/middleware';
 
 const router = Router();

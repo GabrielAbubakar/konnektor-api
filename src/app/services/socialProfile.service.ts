@@ -1,8 +1,7 @@
-import { ICreateSocialProfileRequest } from '@/app/interfaces/requests';
-import SocialProfile from '@/app/models/socialProfile.model';
+import { type ICreateSocialProfileRequest } from '@/app/interfaces/requests';
+import { SocialProfile } from '@/app/models';
 import { AppError } from '@/app/utils';
-import { Types } from 'mongoose';
-// import { Schema } from 'mongoose';
+import type { Types } from 'mongoose';
 
 class SocialProfileService {
     create = async (data: ICreateSocialProfileRequest): Promise<any> => {

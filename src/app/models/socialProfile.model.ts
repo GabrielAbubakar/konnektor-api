@@ -1,4 +1,5 @@
-import mongoose, { Schema, Types } from 'mongoose';
+import type { Types } from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 import { URL } from 'url';
 
 export interface ISocialProfile {
@@ -39,5 +40,4 @@ const socialProfileSchema = new Schema<ISocialProfile>(
     }
 );
 
-const SocialProfile = mongoose.model<ISocialProfile>('SocialProfile', socialProfileSchema);
-export default SocialProfile;
+export const SocialProfile = mongoose.model<ISocialProfile>('SocialProfile', socialProfileSchema);
