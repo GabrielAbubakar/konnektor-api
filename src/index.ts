@@ -1,4 +1,4 @@
-import { connectToDatabase } from './config/db.ts';
+import { connectToDatabase } from './app/config/db.ts';
 import app from './server.ts';
 
 // Connect to the database before starting the server

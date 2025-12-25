@@ -40,9 +40,7 @@
         "allowImportingTsExtensions": true,
         "baseUrl": "./src",
         "paths": {
-            "@/*": ["*"],
-            "@api/*": ["api/*"],
-            "@v1/*": ["api/v1/*"]
+            "@/*": ["*"]
         },
         "typeRoots": ["./src/types", "./node_modules/@types"]
     },

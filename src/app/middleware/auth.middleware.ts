@@ -1,7 +1,8 @@
-import User, { IUser } from '@api/v1/models/user.model';
-import { AppError, catchAsync } from '@api/utils';
+import type { IUser } from '@/app/models';
+import { User } from '@/app/models';
+import { AppError, catchAsync } from '@/app/utils';
 import jwt from 'jsonwebtoken';
-import { Request, Response } from 'express';
+import type { Request, Response } from 'express';
 
 export interface AuthenticatedRequest extends Request {
     user?: IUser;
