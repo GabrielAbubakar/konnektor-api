@@ -23,7 +23,10 @@ class EventService {
     };
 
     getById = async (eventId: string) => {
-        const result = await Event.findById(eventId);
+        const result = await Event.findById(eventId).populate({
+            path: 'konnektions',
+            select: 'name email',
+        });
 
         if (!result) {
             throw new AppError(RESPONSE_MESSAGES.NOT_FOUND, HTTP_STATUS.NOT_FOUND);

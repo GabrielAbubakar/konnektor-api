@@ -3,7 +3,7 @@ import express from 'express';
 import morgan from 'morgan';
 import helmet from 'helmet';
 import dotenv from 'dotenv';
-import { authRoutes, eventRoutes, socialProfileRoutes } from '@/app/routes';
+import { authRoutes, eventRoutes, socialProfileRoutes, userRoutes } from '@/app/routes';
 // import { AppError } from '@/api/utils';
 import globalErrorHandler from '@/app/middleware/globalErrorHandler';
 
@@ -17,6 +17,7 @@ app.use(helmet({ crossOriginResourcePolicy: false }));
 
 // Route Handlers
 app.use('/auth', authRoutes);
+app.use('/users', userRoutes);
 app.use('/social-profiles', socialProfileRoutes);
 app.use('/events', eventRoutes);
 
