@@ -1,7 +1,7 @@
 import { type ICreateSocialProfileRequest } from '@/app/interfaces/requests';
-import { SocialProfile } from '@/app/models';
+import { SocialProfile, User } from '@/app/models';
 import { AppError } from '@/app/utils';
-import type { Types } from 'mongoose';
+import { Types } from 'mongoose';
 
 class SocialProfileService {
     create = async (data: ICreateSocialProfileRequest): Promise<any> => {
@@ -12,6 +12,14 @@ class SocialProfileService {
 
     getAll = async (userId: Types.ObjectId): Promise<any[]> => {
         // Implement get all logic
+        if (!Types.ObjectId.isValid(userId)) {
+            throw new AppError('Invalid user ID', 404);
+        }
+
+        if (!(await User.findById(userId))) {
+            throw new AppError('User does not exist', 404);
+        }
+
         return await SocialProfile.find({ userId });
     };
 

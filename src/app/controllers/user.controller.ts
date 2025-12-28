@@ -1,0 +1,37 @@
+import { HTTP_STATUS, RESPONSE_MESSAGES } from '@/app/constants';
+import type { AuthenticatedRequest } from '@/app/middleware';
+import { socialProfileService } from '@/app/services';
+import { catchAsync } from '@/app/utils';
+import type { Response } from 'express';
+import type { Types } from 'mongoose';
+
+class UserController {
+    getSocialProfiles = catchAsync(async (req: AuthenticatedRequest, res: Response) => {
+        const userId = req.params.id;
+        const profiles = await socialProfileService.getAll(userId as unknown as Types.ObjectId);
+
+        res.status(HTTP_STATUS.OK).json({
+            status: 'success',
+            message: RESPONSE_MESSAGES.FETCHED,
+            data: profiles,
+        });
+    });
+
+    getFullProfile = catchAsync(async (req: AuthenticatedRequest, res: Response) => {
+        const user = req.user;
+        const socialProfiles = await socialProfileService.getAll(user!._id);
+
+        const result = {
+            ...user?.toObject(),
+            socialProfiles,
+        };
+
+        res.status(HTTP_STATUS.OK).json({
+            status: 'success',
+            message: RESPONSE_MESSAGES.FETCHED,
+            data: result,
+        });
+    });
+}
+
+export const userController = new UserController();
