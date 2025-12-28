@@ -16,6 +16,22 @@ class UserController {
             data: profiles,
         });
     });
+
+    getFullProfile = catchAsync(async (req: AuthenticatedRequest, res: Response) => {
+        const user = req.user;
+        const socialProfiles = await socialProfileService.getAll(user!._id);
+
+        const result = {
+            ...user?.toObject(),
+            socialProfiles,
+        };
+
+        res.status(HTTP_STATUS.OK).json({
+            status: 'success',
+            message: RESPONSE_MESSAGES.FETCHED,
+            data: result,
+        });
+    });
 }
 
 export const userController = new UserController();
