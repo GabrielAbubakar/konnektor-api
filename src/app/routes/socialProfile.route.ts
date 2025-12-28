@@ -1,13 +1,12 @@
 import Router from 'express';
 import { socialProfileController } from '@/app/controllers';
-import { authMiddleware } from '@/app/middleware';
 
 const router = Router();
 
-router.post('/', authMiddleware.protect, socialProfileController.create);
-router.get('/', authMiddleware.protect, socialProfileController.getAll);
-router.get('/:id', authMiddleware.protect, socialProfileController.getById);
-router.patch('/:id', authMiddleware.protect, socialProfileController.updateById);
-router.delete('/:id', authMiddleware.protect, socialProfileController.deleteById);
+router.post('/', socialProfileController.create);
+router.get('/', socialProfileController.getAll);
+router.get('/:id', socialProfileController.getById);
+router.patch('/:id', socialProfileController.updateById);
+router.delete('/:id', socialProfileController.deleteById);
 
 export const socialProfileRoutes = router;

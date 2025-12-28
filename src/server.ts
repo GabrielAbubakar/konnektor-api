@@ -6,6 +6,7 @@ import dotenv from 'dotenv';
 import { authRoutes, eventRoutes, socialProfileRoutes, userRoutes } from '@/app/routes';
 // import { AppError } from '@/api/utils';
 import globalErrorHandler from '@/app/middleware/globalErrorHandler';
+import { authMiddleware } from '@/app/middleware';
 
 dotenv.config();
 const app = express();
@@ -17,9 +18,9 @@ app.use(helmet({ crossOriginResourcePolicy: false }));
 
 // Route Handlers
 app.use('/auth', authRoutes);
-app.use('/users', userRoutes);
-app.use('/social-profiles', socialProfileRoutes);
-app.use('/events', eventRoutes);
+app.use('/users', authMiddleware.protect, userRoutes);
+app.use('/social-profiles', authMiddleware.protect, socialProfileRoutes);
+app.use('/events', authMiddleware.protect, eventRoutes);
 
 app.get('/', (req: Request, res: Response) => {
     res.json({ message: 'Konnektor API is running' });
